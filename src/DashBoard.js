@@ -1,0 +1,104 @@
+import React, { Component } from 'react';
+import Header from './Header';
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import Button from 'react-bootstrap/Button'
+import './Dashboard.css';
+import Carousel from 'react-bootstrap/Carousel'
+import Card from 'react-bootstrap/Card'
+class DashBoard extends Component {
+    state = {
+
+        pageTitle: "Customers",
+        productCount: 5,
+        products: [{
+            id: 1, name: "watch", price: "500"
+        },
+        {
+            id: 2, name: "Head phone", price: "300"
+        },
+        {
+            id: 3, name: "soap", price: "800"
+        }]
+    }
+    constructor() {
+
+        super()
+
+
+    }
+    render() {
+        return (
+            <div class="container">
+                <Jumbotron>
+                    <h1>Welcome To Your shop </h1>
+                    <p>
+                        upto 50 %  discount is going on
+                    </p>
+                    <p>
+                        <Button variant="primary">Learn more</Button>
+                    </p>
+                </Jumbotron>
+                <div class="products">
+                    {
+
+                        this.state.products.map((prod) => {
+
+                            return (<Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
+                                <Card.Body>
+                                    <Card.Title>Product</Card.Title>
+                                    <Card.Text>
+                                        {prod.name}
+                                    </Card.Text>
+                                    <Card.Text>
+                                        {prod.price}
+                                    </Card.Text>
+                                    <Button variant="primary">Add to Cart</Button>
+                                </Card.Body>
+                            </Card>)
+                        })
+                    }
+
+
+                </div>
+                <Carousel>
+                    <Carousel.Item interval={1000}>
+                        <img
+                            className="d-block w-100"
+                            src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                            alt="First slide"
+                        />
+                        <Carousel.Caption>
+                            <h3>First slide label</h3>
+                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item interval={500}>
+                        <img
+                            className="d-block w-100"
+                            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                            alt="Second slide"
+                        />
+                        <Carousel.Caption>
+                            <h3>Second slide label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                            alt="Third slide"
+                        />
+                        <Carousel.Caption>
+                            <h3>Third slide label</h3>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                </Carousel>
+            </div>
+        );
+    }
+}
+
+export default DashBoard;

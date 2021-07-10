@@ -13,7 +13,7 @@ function HeaderApp(props) {
     return (
         <div>
             <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+                <Navbar.Brand href="#">My Shop</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -23,7 +23,8 @@ function HeaderApp(props) {
                     >
                         <Nav.Link href="#action1">Home</Nav.Link>
                         <Nav.Link href="#action2">About Us</Nav.Link>
-                        
+                        <Nav.Link href="#action2">Products</Nav.Link>
+                        <Nav.Link href="#action2">ContactUs</Nav.Link>
                         
                     </Nav>
                    

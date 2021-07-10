@@ -1,0 +1,9 @@
+.Jumbotron {
+    background-color: black;
+    background-image: url("cart.jpg");
+}
+.products{
+
+    display: flex;
+    justify-content: space-between;
+}

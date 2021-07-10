@@ -3,7 +3,11 @@ import './Register.css';
 function Register(props) {
     return (
         <div>
-            <button className="btn-click">click</button>
+
+            <input type="text" placeholder="enter your name"></input>
+            <input type="text" placeholder="enter your phone-no"></input>
+            <input type="text" placeholder="enter your email"></input>
+            <button className="btn btn-primary btn-click">click</button>
         </div>
     );
 }
