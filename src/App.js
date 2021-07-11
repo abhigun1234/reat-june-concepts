@@ -20,11 +20,13 @@ import Fail from './Fail'
 import ProductList from './ProductList'
 import MyLogin from './MyLogin';
 import CustumerList from './CustumerList'
+import UserForm from './UserForm'
 function App() {
   return (
     <div className="App myapp">
-
-      <BrowserRouter>
+      <Register></Register>
+      {/* <UserForm></UserForm> */}
+      {/* <BrowserRouter>
         <Header></Header>
         <Switch>
           <Route path='/' exact component={MyLogin}></Route>
@@ -38,7 +40,7 @@ function App() {
           <Route path='*' exact component={PageNotFound}></Route>
 
         </Switch>
-      </BrowserRouter>
+      </BrowserRouter> */}
 
     </div>
   );
