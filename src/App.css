@@ -80,3 +80,10 @@ input[type=text], input[type=password] {
       width: 100%;
     }
   }
+  .course-list{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    float: left;
+  }

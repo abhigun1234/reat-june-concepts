@@ -21,10 +21,11 @@ import ProductList from './ProductList'
 import MyLogin from './MyLogin';
 import CustumerList from './CustumerList'
 import UserForm from './UserForm'
+import CourseList from './CourseList'
 function App() {
   return (
     <div className="App myapp">
-      <Register></Register>
+      <CourseList></CourseList>
       {/* <UserForm></UserForm> */}
       {/* <BrowserRouter>
         <Header></Header>
