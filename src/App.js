@@ -25,9 +25,10 @@ import CourseList from './CourseList'
 function App() {
   return (
     <div className="App myapp">
-      <CourseList></CourseList>
+      {/* <CourseList></CourseList> */}
       {/* <UserForm></UserForm> */}
-      {/* <BrowserRouter>
+  
+      <BrowserRouter>
         <Header></Header>
         <Switch>
           <Route path='/' exact component={MyLogin}></Route>
@@ -37,11 +38,11 @@ function App() {
           <Route path='/authfail' exact component={Fail}></Route>
           <Route path='/productlist' exact component={ProductList}></Route>
           <Route path='/custlist' exact component={CustumerList}></Route>
-
+          <Route path='/register' exact component={Register}></Route>
           <Route path='*' exact component={PageNotFound}></Route>
 
         </Switch>
-      </BrowserRouter> */}
+      </BrowserRouter>
 
     </div>
   );
