@@ -1,37 +1,113 @@
-import React from 'react';
+// import React from 'react';
 import { useHistory } from 'react-router-dom'
+import './Register.css';
+import React, { Component } from 'react';
+import axios from 'axios'
+import {BounceLoader,BarLoader,BeatLoader} from 'react-spinners'
+class Login extends Component {
+    constructor() {
 
-function Login(props) {
-    let history = useHistory();
-    var userName, password;
-    function login() {
-        if (userName === password) {
-            history.push('/dashboard')
-        }
-        else{
-
-            history.push('/authfail')
-        }
+        super()
+        this.state = { email: '', password: '' ,start:false}
     }
+    // getUsername = (event) => {
+    //     console.log("data", event.target.value)
+    //     this.setState({ name: event.target.value })
 
-    function getUserName(val) {
-        console.log("val", val.target.value)
-        userName = val.target.value
-    }
+    // }
+    getEmail = (event) => {
+        console.log("data", event.target.value)
+        this.setState({ email: event.target.value })
 
-    function getPassword(val) {
-        console.log("val", val.target.value)
-        password = val.target.value
     }
-    
-    return (
-        
-        <div>
-            <input onChange={getUserName} type="text" placeholder="enter name"></input>
-            <input onChange={getPassword} type="text" placeholder="enter password"></input>
-            <button class="btn btn-primary" onClick={login}>Login</button>
-        </div>
-    );
+    getPassword = (event) => {
+        console.log("data", event.target.value)
+        this.setState({ password: event.target.value })
+
+    }
+    onSubmitHandle = (event) => {
+    alert("login")
+        console.log("email", this.state.email)
+        console.log("password", this.state.password)
+        event.preventDefault()
+         this.setState({start:true})
+         console.log("alling api")
+        axios.post("https://justolearnapp.herokuapp.com/api/auth/", this.state).then(response => {
+            alert("hello")
+            console.log("response", response)
+            this.setState({start:false})
+            
+        }).catch(error => {
+            console.log("error", error)
+            this.setState({start:false})
+        })
+
+    }
+    render() {
+        return (
+            <div>
+                <form onSubmit={this.onSubmitHandle}>
+
+                    <div class="container">
+
+                        {/* <div>
+                            <label>Enter Your Name</label>
+                            <input onChange={this.getUsername} type="text" value={this.state.userName} placeholder="enter your name"></input>
+                            {this.state.userName}
+                        </div> */}
+                        <div>
+                            <label>Enter Your email</label>
+                            <input onChange={this.getEmail} type="text" value={this.state.email} placeholder="enter your email"></input>
+                            {this.state.userName}
+                        </div>
+
+                        <div>
+                            <label>Enter Your Phone No</label>
+                            <input onChange={this.getPassword} type="password" value={this.state.phone_no} placeholder="enter your password"></input>
+                            {this.state.userName}
+                        </div>
+
+                        <button className="btn btn-primary" type="submit">Login</button>
+                        <BounceLoader loading={this.state.start}></BounceLoader>
+                    </div>
+                </form>
+            </div>
+        );
+    }
 }
 
 export default Login;
+// function Login(props) {
+//     let history = useHistory();
+//     var userName, password;
+//     function login() {
+//         if (userName === password) {
+//             history.push('/dashboard')
+//         }
+//         else{
+
+//             history.push('/authfail')
+//         }
+//     }
+
+//     function getUserName(val) {
+//         console.log("val", val.target.value)
+//         userName = val.target.value
+//     }
+
+//     function getPassword(val) {
+//         console.log("val", val.target.value)
+//         password = val.target.value
+//     }
+    
+//     return (
+        
+//         <div>
+//             <input onChange={getUserName} type="text" placeholder="enter name"></input>
+//             <input onChange={getPassword} type="text" placeholder="enter password"></input>
+//             <button class="btn btn-primary" onClick={login}>Login</button>
+//         </div>
+//     );
+// }
+
+//  export default Login;

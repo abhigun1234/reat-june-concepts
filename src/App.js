@@ -31,7 +31,7 @@ function App() {
       <BrowserRouter>
         <Header></Header>
         <Switch>
-          <Route path='/' exact component={MyLogin}></Route>
+          <Route path='/' exact component={Login}></Route>
           <Route path='/dashboard' exact component={DashBoard}></Route>
           <Route path='/aboutus' exact component={AboutUs}></Route>
           <Route path='/customer' exact component={Custumerinfo}></Route>
