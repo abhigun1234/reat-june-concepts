@@ -37,7 +37,6 @@ function App() {
           <Route path='/customer' exact component={Custumerinfo}></Route>
           <Route path='/authfail' exact component={Fail}></Route>
           <Route path='/productlist' exact component={ProductList}></Route>
-          <Route path='/custlist' exact component={CustumerList}></Route>
           <Route path='/register' exact component={Register}></Route>
           <Route path='*' exact component={PageNotFound}></Route>
 
