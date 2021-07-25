@@ -23,6 +23,7 @@ import CustumerList from './CustumerList'
 import UserForm from './UserForm'
 import CourseList from './CourseList'
 import PersonInfo from './PersonInfo';
+import EmpData from './EmpData';
 function App() {
   return (
     <div className="App myapp">
@@ -40,6 +41,8 @@ function App() {
           <Route path='/productlist' exact component={ProductList}></Route>
           <Route path='/register' exact component={Register}></Route>
           <Route path='/person' exact component={PersonInfo}></Route>
+          <Route path='/emp' exact component={EmpData}></Route>
+          
           
           <Route path='*' exact component={PageNotFound}></Route>
 
