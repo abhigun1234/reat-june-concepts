@@ -26,7 +26,7 @@ class Login extends Component {
 
     }
     onSubmitHandle = (event) => {
-    alert("login")
+    // alert("login")
         console.log("email", this.state.email)
         console.log("password", this.state.password)
         event.preventDefault()
