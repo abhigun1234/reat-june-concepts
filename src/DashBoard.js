@@ -5,20 +5,13 @@ import Button from 'react-bootstrap/Button'
 import './Dashboard.css';
 import Carousel from 'react-bootstrap/Carousel'
 import Card from 'react-bootstrap/Card'
+import axios from 'axios' 
 class DashBoard extends Component {
     state = {
 
         pageTitle: "Customers",
         productCount: 5,
-        products: [{
-            id: 1, name: "watch", price: "500"
-        },
-        {
-            id: 2, name: "Head phone", price: "300"
-        },
-        {
-            id: 3, name: "soap", price: "800"
-        }]
+        products: []
     }
     constructor() {
 
@@ -44,7 +37,6 @@ class DashBoard extends Component {
                         this.state.products.map((prod) => {
 
                             return (<Card style={{ width: '18rem' }}>
-                                <Card.Img variant="top" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" />
                                 <Card.Body>
                                     <Card.Title>Product</Card.Title>
                                     <Card.Text>
@@ -56,6 +48,9 @@ class DashBoard extends Component {
                                     <Button variant="primary">Add to Cart</Button>
                                 </Card.Body>
                             </Card>)
+                            // return(<div><ul>
+                            //     <li> {prod.name}</li>
+                            //     </ul></div>)
                         })
                     }
 
@@ -98,6 +93,17 @@ class DashBoard extends Component {
                 </Carousel>
             </div>
         );
+    }
+    
+    componentDidMount (){
+           console.log("did mount")
+           axios.get('https://justolearnapp.herokuapp.com/api/addproduct').then(response=>{
+               console.log("data",response)
+               this.setState({products:response.data.result})
+           }).catch(error=>{
+               console.log("error",error)
+           })
+        
     }
 }
 
