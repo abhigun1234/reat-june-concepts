@@ -42,6 +42,7 @@ function App() {
           <Route path='/register' exact component={Register}></Route>
           <Route path='/person' exact component={PersonInfo}></Route>
           <Route path='/emp' exact component={EmpData}></Route>
+          <Route path='/login' exact component={EmpData}></Route>
           
           
           <Route path='*' exact component={PageNotFound}></Route>

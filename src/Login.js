@@ -68,6 +68,7 @@ class Login extends Component {
                         </div>
 
                         <button className="btn btn-primary" type="submit">Login</button>
+                        <button  className='btn btn-secondary' type='submit'>Forgot Password</button>
                         <BounceLoader loading={this.state.start}></BounceLoader>
                     </div>
                 </form>
