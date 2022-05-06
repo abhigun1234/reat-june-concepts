@@ -24,6 +24,7 @@ import UserForm from './UserForm'
 import CourseList from './CourseList'
 import PersonInfo from './PersonInfo';
 import EmpData from './EmpData';
+import ProductDetails from './ProductDetails';
 function App() {
   return (
     <div className="App myapp">
@@ -33,7 +34,7 @@ function App() {
       <BrowserRouter>
         <Header></Header>
         <Switch>
-          <Route path='/' exact component={Login}></Route>
+          <Route path='/' exact component={ProductDetails}></Route>
           <Route path='/dashboard' exact component={DashBoard}></Route>
           <Route path='/aboutus' exact component={AboutUs}></Route>
           <Route path='/customer' exact component={Custumerinfo}></Route>

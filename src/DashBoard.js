@@ -36,21 +36,19 @@ class DashBoard extends Component {
 
                         this.state.products.map((prod) => {
 
-                            return (<Card style={{ width: '18rem' }}>
-                                <Card.Body>
-                                    <Card.Title>Product</Card.Title>
-                                    <Card.Text>
-                                        {prod.name}
-                                    </Card.Text>
-                                    <Card.Text>
-                                        {prod.price}
-                                    </Card.Text>
-                                    <Button variant="primary">Add to Cart</Button>
-                                </Card.Body>
-                            </Card>)
-                            // return(<div><ul>
-                            //     <li> {prod.name}</li>
-                            //     </ul></div>)
+                            return (
+                                <div>
+                                    <ul>
+                                        <li>
+                                            {prod.name}
+                                        </li>
+                                        <li>
+                                            {prod.price}
+                                        </li>
+                                    </ul>
+                                </div>
+                            )
+                            
                         })
                     }
 
