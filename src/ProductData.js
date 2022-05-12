@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 export default class ProductData extends Component {
-    constructor(){
-        this.state={products:[]}
-        super()
-    }
+    // constructor(){
+    //     // this.state={products:[]}
+    //     // super()
+    // }
   render() {
     return (
       <div>ProductData</div>
@@ -12,10 +12,10 @@ export default class ProductData extends Component {
   }
   componentDidMount(){
 
-   // get call
-   axios.get("https://justolearnapp.herokuapp.com/api/addproduct").then(response=>{
-       console.log("data",response)
-       this.setState(products:response.data.result)
-   })
+  //  // get call
+  //  axios.get("https://justolearnapp.herokuapp.com/api/addproduct").then(response=>{
+  //      console.log("data",response)
+  //     //  this.setState(products:response.data.result)
+  //  })
   }
 }

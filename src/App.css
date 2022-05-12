@@ -5,6 +5,12 @@
     height: 100rem;
 
 }
+.products
+{
+  display: flex;
+  float: left;
+  justify-content: center;
+}
 .shop-img{
 
     width: 120rem;

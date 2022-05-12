@@ -6,31 +6,31 @@ class Register extends Component {
     constructor() {
 
         super()
-        this.state = { name: '', email: '', password: '' ,start:false}
+        this.state = { name: '', price: '', description: '' ,start:false}
     }
-    getUsername = (event) => {
+    getProductName = (event) => {
         console.log("data", event.target.value)
         this.setState({ name: event.target.value })
 
     }
-    getEmail = (event) => {
+    getPrice = (event) => {
         console.log("data", event.target.value)
-        this.setState({ email: event.target.value })
+        this.setState({ price: event.target.value })
 
     }
-    getPassword = (event) => {
+    getDescription = (event) => {
         console.log("data", event.target.value)
-        this.setState({ password: event.target.value })
+        this.setState({ description: event.target.value })
 
     }
     onSubmitHandle = (event) => {
 
         console.log("name", this.state.name)
-        console.log("email", this.state.email)
-        console.log("password", this.state.password)
+        console.log("price", this.state.price)
+        console.log("description", this.state.description)
         event.preventDefault()
          this.setState({start:true})
-        axios.post("https://justolearnapp.herokuapp.com/api/users/", this.state).then(response => {
+        axios.post("https://justolearnapp.herokuapp.com/api/addproduct", this.state).then(response => {
             console.log("response", response)
             this.setState({start:false})
             
@@ -40,6 +40,7 @@ class Register extends Component {
         })
 
     }
+    
     render() {
         return (
             <div>
@@ -49,18 +50,18 @@ class Register extends Component {
 
                         <div>
                             <label>Enter Your Name</label>
-                            <input onChange={this.getUsername} type="text" value={this.state.userName} placeholder="enter your name"></input>
+                            <input onChange={this.getProductName} type="text" value={this.state.name} placeholder="enter product  name"></input>
                             {this.state.userName}
                         </div>
                         <div>
                             <label>Enter Your email</label>
-                            <input onChange={this.getEmail} type="text" value={this.state.email} placeholder="enter your email"></input>
+                            <input onChange={this.getPrice} type="text" value={this.state.price} placeholder="enter product  price"></input>
                             {this.state.userName}
                         </div>
 
                         <div>
                             <label>Enter Your Phone No</label>
-                            <input onChange={this.getPassword} type="password" value={this.state.phone_no} placeholder="enter your password"></input>
+                            <input onChange={this.getDescription} type="password" value={this.state.description} placeholder="enter product decription"></input>
                             {this.state.userName}
                         </div>
 

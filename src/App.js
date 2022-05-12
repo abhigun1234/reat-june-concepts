@@ -26,6 +26,7 @@ import PersonInfo from './PersonInfo';
 import EmpData from './EmpData';
 import ProductDetails from './ProductDetails';
 import ProductData from './ProductData';
+import AddProduct from './AddProduct';
 function App() {
   return (
     <div className="App myapp">
@@ -35,7 +36,7 @@ function App() {
       <BrowserRouter>
         <Header></Header>
         <Switch>
-          <Route path='/' exact component={ProductData}></Route>
+          <Route path='/' exact component={DashBoard}></Route>
           <Route path='/dashboard' exact component={DashBoard}></Route>
           <Route path='/aboutus' exact component={AboutUs}></Route>
           <Route path='/customer' exact component={Custumerinfo}></Route>

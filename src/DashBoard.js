@@ -38,15 +38,26 @@ class DashBoard extends Component {
 
                             return (
                                 <div>
-                                    <ul>
+                                    {/* <ul>
                                         <li>
                                             {prod.name}
                                         </li>
                                         <li>
                                             {prod.price}
                                         </li>
-                                    </ul>
+                                    </ul> */}
+                                    <div class="products card" >
+                                    <img src="..." class="card-img-top" alt="..."/>
+                                    <div class="card-body">
+                                        <h5 class="card-title">{prod.name}</h5>
+                                        <p class="card-text">
+                                        {prod.price}
+                                            </p>
+                                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    </div>
                                 </div>
+                                </div>
+                                
                             )
                             
                         })
