@@ -1,81 +1,69 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'
+import {BounceLoader,BarLoader,BeatLoader} from 'react-spinners'
+function AddProducts() {
+  const [products,setProduct]=useState({name:'',price:'',description:''})
+  const [start,setLoader]=useState(false)
+  function setName(e){
 
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios'
-// function AddProduct(props) {
-//     const [products, fetchData] = useState([])
-//     // function getProductName = (event) => {
-//     //     console.log("data", event.target.value)
-//     //     this.setState({ name: event.target.value })
+    setProduct({...products,name:e.target.value})
 
-//     // }
-//     // function getPrice = (event) => {
-//     //     console.log("data", event.target.value)
-//     //     this.setState({ price: event.target.value })
 
-//     // }
-//     // function getDescription = (event) => {
-//     //     console.log("data", event.target.value)
-//     //     this.setState({ description: event.target.value })
+}
+function setPrice(e){
 
-//     // }
-//     // useEffect(() => {
+    setProduct({...products,price:e.target.value})
 
-//     //     axios.get('https://jsonplaceholder.typicode.com/posts').then(res => {
-//     //         console.log('res', res.data)
-//     //     }).catch(error => {
-//     //         console.log("error", error)
-//     //     })
-//     // })
-//     // onSubmitHandle = (event) => {
 
-//     //     console.log("name", this.state.name)
-//     //     console.log("price", this.state.price)
-//     //     console.log("description", this.state.description)
-//     //     event.preventDefault()
-//     //      this.setState({start:true})
-//     //     axios.post("https://justolearnapp.herokuapp.com/api/addproduct", this.state).then(response => {
-//     //         console.log("response", response)
-//     //         this.setState({start:false})
+}
+function setDescription(e){
+
+    setProduct({...products,description:e.target.value})
+  
+  
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    // const data = { title, body };
+    setLoader(true)
+    // const requestOptions = {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(products)
+    // };
+    // fetch("https://justolearnapp.herokuapp.com/api/addproduct", requestOptions)
+    //   .then(response => {response.json()
+    //     setLoader(false)
+    // })
+    //   .then(res => console.log(res));
+    axios.post("https://justolearnapp.herokuapp.com/api/addproduct", products).then(response => {
+            console.log("response", response)
+            setLoader(false)
             
-//     //     }).catch(error => {
-//     //         console.log("error", error)
-//     //         this.setState({start:false})
-//     //     })
+        }).catch(error => {
+            console.log("error", error)
+            setLoader(false)
+        })
+  };
 
-//     // }
-//     // onSubmitHandle = function (event) {
-//     //     alert('it works!');
-//     //     e.preventDefault();
-//     // }
-//     return (
-//         <div>
-//                 <form >
-
-//                     <div class="container">
-
-//                         <div>
-//                             <label>Enter Your Name</label>
-//                             <input onChange={this.getProductName} type="text" value={this.state.name} placeholder="enter product  name"></input>
-//                             {this.state.userName}
-//                         </div>
-//                         <div>
-//                             <label>Enter Your email</label>
-//                             <input onChange={this.getPrice} type="text" value={this.state.price} placeholder="enter product  price"></input>
-//                             {this.state.userName}
-//                         </div>
-
-//                         <div>
-//                             <label>Enter Your Phone No</label>
-//                             <input onChange={this.getDescription} type="password" value={this.state.description} placeholder="enter product decription"></input>
-//                             {this.state.userName}
-//                         </div>
-
-//                         <button className="btn btn-primary" type="submit">Submit</button>
-//                         {/* <BounceLoader loading={this.state.start}></BounceLoader> */}
-//                     </div>
-//                 </form>
-//             </div>
-//     );
-// }
-
-// export default AddProduct;
+  return (
+      <div className="form-group productForm">
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <input class="form-control" placeholder="name" value={products.name}
+            onChange={setName} required />
+            <input  class="form-control" placeholder="price" value={products.price}
+            onChange={setPrice} required />
+            <input class="form-control" placeholder="description" value={products.description}
+            onChange={setDescription} required />
+        
+          <button class="btn btn-primary" type="submit" >
+           Add Products
+          </button>
+        </form>
+        <BounceLoader loading={start}></BounceLoader>
+      </div>
+  );
+}
+export default AddProducts;

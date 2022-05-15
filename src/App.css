@@ -5,6 +5,12 @@
     height: 100rem;
 
 }
+.productForm{
+  width: 500px;
+  margin-top: 159px;
+  margin-left: 525px;
+  padding: 10px;
+}
 .products
 {
   display: flex;
