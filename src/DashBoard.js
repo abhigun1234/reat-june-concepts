@@ -53,6 +53,9 @@ class DashBoard extends Component {
                                         <p class="card-text">
                                         {prod.price}
                                             </p>
+                                            <p class="card-text">
+                                        {prod.description}
+                                            </p>
                                         <a href="#" class="btn btn-primary">Add to Cart</a>
                                     </div>
                                 </div>
