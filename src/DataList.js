@@ -1,5 +1,11 @@
-import React,{useState,useEffect} from 'react'
+import React from 'react';
 
-function DataList{
-    return <div>Data List</div>
+function DataList(props) {
+    return (
+        <div>
+            
+        </div>
+    );
 }
+
+export default DataList;
