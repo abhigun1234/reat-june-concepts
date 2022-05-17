@@ -28,10 +28,11 @@ import ProductDetails from './ProductDetails';
 import ProductData from './ProductData';
 import AddProduct from './AddProduct';
 import AddPosts from './AddPosts';
+import mainLogo from'./ecart.png';
 
 function App() {
   return (
-    <div className="App myapp">
+    <div className="App myapp"  style={{ backgroundImage: "url(/ecart.png)" }}>
       {/* <CourseList></CourseList> */}
       {/* <UserForm></UserForm> */}
   

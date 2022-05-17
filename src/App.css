@@ -14,8 +14,14 @@
 .products
 {
   display: flex;
-  float: left;
-  justify-content: center;
+  /* float: left; */
+  /* width: 200px; */
+  /* height: 150px; */
+  margin: 6px;
+  /* justify-content: center; */
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+
 }
 .shop-img{
 
