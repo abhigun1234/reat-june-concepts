@@ -40,14 +40,14 @@ function App() {
       <BrowserRouter>
         <Header></Header>
         <Switch>
-          <Route path='/' exact component={AddProduct}></Route>
+          <Route path='/' exact component={Login}></Route>
           <Route path='/dashboard' exact component={DashBoard}></Route>
           <Route path='/aboutus' exact component={AboutUs}></Route>
           <Route path='/customer' exact component={Custumerinfo}></Route>
           <Route path='/authfail' exact component={Fail}></Route>
           <Route path='/productlist' exact component={ProductList}></Route>
           <Route path='/register' exact component={Register}></Route>
-          <Route path='/person' exact component={PersonInfo}></Route>
+          <Route path='/addproduct' exact component={AddProduct}></Route>
           <Route path='/emp' exact component={EmpData}></Route>
           <Route path='/login' exact component={EmpData}></Route>
           
