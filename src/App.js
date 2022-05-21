@@ -35,6 +35,7 @@ function App() {
     <div className="App myapp"  style={{ backgroundImage: "url(/ecart.png)" }}>
       {/* <CourseList></CourseList> */}
       {/* <UserForm></UserForm> */}
+      <img src={mainLogo}></img>
   
       <BrowserRouter>
         <Header></Header>
