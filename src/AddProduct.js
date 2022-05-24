@@ -5,19 +5,19 @@ function AddProducts() {
   const [products,setProduct]=useState({name:'',price:'',description:''})
   const [start,setLoader]=useState(false)
   function setName(e){
-
+          console.log("data",e.target.value)
     setProduct({...products,name:e.target.value})
 
 
 }
 function setPrice(e){
-
+  console.log("data",e.target.value)
     setProduct({...products,price:e.target.value})
 
 
 }
 function setDescription(e){
-
+   console.log("data",e.target.value)
     setProduct({...products,description:e.target.value})
   
   
@@ -25,9 +25,9 @@ function setDescription(e){
 
   const handleSubmit = e => {
     e.preventDefault();
-
+console.log("product",products)
     // const data = { title, body };
-    setLoader(true)
+    // setLoader(true)
     // const requestOptions = {
     //   method: "POST",
     //   headers: { "Content-Type": "application/json" },
@@ -38,14 +38,14 @@ function setDescription(e){
     //     setLoader(false)
     // })
     //   .then(res => console.log(res));
-    axios.post("https://justolearnapp.herokuapp.com/api/addproduct", products).then(response => {
-            console.log("response", response)
-            setLoader(false)
+    // axios.post("https://justolearnapp.herokuapp.com/api/addproduct", products).then(response => {
+    //         console.log("response", response)
+    //         setLoader(false)
             
-        }).catch(error => {
-            console.log("error", error)
-            setLoader(false)
-        })
+    //     }).catch(error => {
+    //         console.log("error", error)
+    //         setLoader(false)
+    //     })
   };
 
   return (
