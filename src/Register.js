@@ -6,21 +6,21 @@ class Register extends Component {
     constructor() {
 
         super()
-        this.state = { name: '', price: '', description: '' ,start:false}
+        this.state = { name: '', email: '', password: '' ,start:false}
     }
-    getProductName = (event) => {
+    getName = (event) => {
         console.log("data", event.target.value)
         this.setState({ name: event.target.value })
 
     }
-    getPrice = (event) => {
+    getPassword = (event) => {
         console.log("data", event.target.value)
-        this.setState({ price: event.target.value })
+        this.setState({ email: event.target.value })
 
     }
-    getDescription = (event) => {
+    getEmail = (event) => {
         console.log("data", event.target.value)
-        this.setState({ description: event.target.value })
+        this.setState({ password: event.target.value })
 
     }
     onSubmitHandle = (event) => {
@@ -55,14 +55,14 @@ class Register extends Component {
                         </div>
                         <div>
                             <label>Enter Your email</label>
-                            <input onChange={this.getPrice} type="text" value={this.state.price} placeholder="enter product  price"></input>
-                            {this.state.userName}
+                            <input onChange={this.getPrice} type="text" value={this.state.email} placeholder="enter product  price"></input>
+                            {this.state.email}
                         </div>
 
                         <div>
                             <label>Enter Your Phone No</label>
-                            <input onChange={this.getDescription} type="password" value={this.state.description} placeholder="enter product decription"></input>
-                            {this.state.userName}
+                            <input onChange={this.getDescription} type="password" value={this.state.password} placeholder="enter product decription"></input>
+                            {this.state.password}
                         </div>
 
                         <button className="btn btn-primary" type="submit">Submit</button>

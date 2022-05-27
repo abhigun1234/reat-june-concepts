@@ -27,7 +27,7 @@ function setDescription(e){
     e.preventDefault();
 console.log("product",products)
     // const data = { title, body };
-    // setLoader(true)
+    setLoader(true)
     // const requestOptions = {
     //   method: "POST",
     //   headers: { "Content-Type": "application/json" },
@@ -38,14 +38,14 @@ console.log("product",products)
     //     setLoader(false)
     // })
     //   .then(res => console.log(res));
-    // axios.post("https://justolearnapp.herokuapp.com/api/addproduct", products).then(response => {
-    //         console.log("response", response)
-    //         setLoader(false)
+    axios.post("https://justolearnapp.herokuapp.com/api/addproduct", products).then(response => {
+            console.log("response", response)
+            setLoader(false)
             
-    //     }).catch(error => {
-    //         console.log("error", error)
-    //         setLoader(false)
-    //     })
+        }).catch(error => {
+            console.log("error", error)
+            setLoader(false)
+        })
   };
 
   return (

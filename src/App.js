@@ -29,6 +29,7 @@ import ProductData from './ProductData';
 import AddProduct from './AddProduct';
 import AddPosts from './AddPosts';
 import mainLogo from'./ecart.png';
+import ProductDataEcomm from './ProductDataEcomm';
 
 function App() {
   return (
@@ -40,7 +41,7 @@ function App() {
       <BrowserRouter>
         <Header></Header>
         <Switch>
-          <Route path='/' exact component={Login}></Route>
+          <Route path='/' exact component={ProductDataEcomm}></Route>
           <Route path='/dashboard' exact component={DashBoard}></Route>
           <Route path='/aboutus' exact component={AboutUs}></Route>
           <Route path='/customer' exact component={Custumerinfo}></Route>
