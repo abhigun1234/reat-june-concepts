@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table'
 function PersonInfo(props) {
     return (
         <div>
-            <Table className="table">
+            <table className="table">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -33,7 +33,7 @@ Data.map((person)=>{
 
                 </tbody>
 
-            </Table>
+            </table>
 
         </div>
     );

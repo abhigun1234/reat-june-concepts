@@ -32,16 +32,19 @@ import mainLogo from'./ecart.png';
 import ProductDataEcomm from './ProductDataEcomm';
 
 function App() {
+
+function clickMe(){
+
+  alert("hello")
+}
   return (
     <div className="App myapp"  style={{ backgroundImage: "url(/ecart.png)" }}>
-      {/* <CourseList></CourseList> */}
-      {/* <UserForm></UserForm> */}
-      <img src={mainLogo}></img>
+     
   
       <BrowserRouter>
         <Header></Header>
         <Switch>
-          <Route path='/' exact component={ProductDataEcomm}></Route>
+          <Route path='/' exact component={DashBoard}></Route>
           <Route path='/dashboard' exact component={DashBoard}></Route>
           <Route path='/aboutus' exact component={AboutUs}></Route>
           <Route path='/customer' exact component={Custumerinfo}></Route>
@@ -50,14 +53,14 @@ function App() {
           <Route path='/register' exact component={Register}></Route>
           <Route path='/addproduct' exact component={AddProduct}></Route>
           <Route path='/emp' exact component={EmpData}></Route>
-          <Route path='/login' exact component={EmpData}></Route>
+          <Route path='/login' exact component={Login}></Route>
           
           
           <Route path='*' exact component={PageNotFound}></Route>
 
         </Switch>
-      </BrowserRouter>
-
+      </BrowserRouter> 
+              
     </div>
   );
 }

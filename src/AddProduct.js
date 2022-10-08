@@ -5,20 +5,27 @@ function AddProducts() {
   const [products,setProduct]=useState({name:'',price:'',description:''})
   const [start,setLoader]=useState(false)
   function setName(e){
+
           console.log("data",e.target.value)
     setProduct({...products,name:e.target.value})
+    console.log("products",products)
 
 
 }
 function setPrice(e){
+
   console.log("data",e.target.value)
     setProduct({...products,price:e.target.value})
+    console.log("products",products)
 
 
 }
 function setDescription(e){
+
    console.log("data",e.target.value)
     setProduct({...products,description:e.target.value})
+    console.log("products",products)
+
   
   
   }
@@ -38,7 +45,7 @@ console.log("product",products)
     //     setLoader(false)
     // })
     //   .then(res => console.log(res));
-    axios.post("https://justolearnapp.herokuapp.com/api/addproduct", products).then(response => {
+    axios.post("http://localhost:3000/api/addproduct", products).then(response => {
             console.log("response", response)
             setLoader(false)
             

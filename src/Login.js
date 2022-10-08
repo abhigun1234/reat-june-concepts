@@ -4,6 +4,7 @@ import './Register.css';
 import React, { Component } from 'react';
 import axios from 'axios'
 import {BounceLoader,BarLoader,BeatLoader} from 'react-spinners'
+// import { Navigate } from 'react-router-dom';
 class Login extends Component {
     constructor() {
 
@@ -25,16 +26,38 @@ class Login extends Component {
         this.setState({ password: event.target.value })
 
     }
+//     nevigate(data){
+//         const navigate = Navigate();                
+        
+//  if (response) {
+//     navigate("/dashboard" , { replace: "/" } );
+//             }
+//             else{
+    
+//                 alert(response)
+//             }
+
+//     }
     onSubmitHandle = (event) => {
     // alert("login")
+  
         console.log("email", this.state.email)
         console.log("password", this.state.password)
         event.preventDefault()
          this.setState({start:true})
          console.log("alling api")
-        axios.post("https://justolearnapp.herokuapp.com/api/auth/", this.state).then(response => {
+        axios.post("http://localhost:3000/api/auth/", this.state).then(response => {
             alert("hello")
-            console.log("response", response)
+            // let history = useHistory();
+            // console.log("response", response)
+            // // this.nevigate(response)
+            // if (response) {
+            //     history.push('/dashboard')
+            // }
+            // else{
+    
+            //     alert(response)
+            // }
             this.setState({start:false})
             
         }).catch(error => {
@@ -78,37 +101,55 @@ class Login extends Component {
 }
 
 export default Login;
-// function Login(props) {
+//  function Login(props) {
 //     let history = useHistory();
 //     var userName, password;
-//     function login() {
-//         if (userName === password) {
-//             history.push('/dashboard')
-//         }
-//         else{
+//      function login() {
+//         axios.post("http://localhost:3000/api/auth/",{username,password}).then(response => {
+//                         alert("hello")
+//                          let history = useHistory();
+//                         console.log("response", response)
+//                         this.nevigate(response)
+//                         if (response) {
+//                             history.push('/dashboard')
+//                         }
+//                         else{
+                
+//                             alert(response)
+//                         }
+//                         // this.setState({start:false})
+                        
+//                     }).catch(error => {
+//                         console.log("error", error)
+//                         this.setState({start:false})
+//                     })
+//          if (response) {
+//            history.push('/dashboard')
+//        }
+//        else{
 
 //             history.push('/authfail')
 //         }
-//     }
+//    }
 
-//     function getUserName(val) {
-//         console.log("val", val.target.value)
-//         userName = val.target.value
-//     }
+//      function getUserName(val) {
+//          console.log("val", val.target.value)
+//          userName = val.target.value
+//      }
 
-//     function getPassword(val) {
-//         console.log("val", val.target.value)
-//         password = val.target.value
-//     }
+//      function getPassword(val) {
+//          console.log("val", val.target.value)
+//          password = val.target.value
+//      }
     
-//     return (
+//      return (
         
-//         <div>
-//             <input onChange={getUserName} type="text" placeholder="enter name"></input>
-//             <input onChange={getPassword} type="text" placeholder="enter password"></input>
-//             <button class="btn btn-primary" onClick={login}>Login</button>
-//         </div>
-//     );
-// }
+//          <div>
+//              <input onChange={getUserName} type="text" placeholder="enter name"></input>
+//              <input onChange={getPassword} type="text" placeholder="enter password"></input>
+//              <button class="btn btn-primary" onClick={login}>Login</button>
+//          </div>
+//      );
+//  }
 
 //  export default Login;

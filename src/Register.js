@@ -50,18 +50,18 @@ class Register extends Component {
 
                         <div>
                             <label>Enter Your Name</label>
-                            <input onChange={this.getProductName} type="text" value={this.state.name} placeholder="enter product  name"></input>
+                            <input onChange={this.getName} type="text" value={this.state.name} placeholder="enter your  name"></input>
                             {this.state.userName}
                         </div>
                         <div>
                             <label>Enter Your email</label>
-                            <input onChange={this.getPrice} type="text" value={this.state.email} placeholder="enter product  price"></input>
+                            <input onChange={this.getEmail} type="text" value={this.state.email} placeholder="enter your  mail"></input>
                             {this.state.email}
                         </div>
 
                         <div>
                             <label>Enter Your Phone No</label>
-                            <input onChange={this.getDescription} type="password" value={this.state.password} placeholder="enter product decription"></input>
+                            <input onChange={this.getPassword} type="password" value={this.state.password} placeholder="enter your  password"></input>
                             {this.state.password}
                         </div>
 

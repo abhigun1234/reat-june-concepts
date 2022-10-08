@@ -19,7 +19,7 @@ function Header(props) {
                         <Link className="nav-link" to="/customer">Customer</Link>
                         
                         */}
-                        <NavLink activeClassName="active" className="nav-link" to="/">Login</NavLink>
+                        <NavLink activeClassName="active" className="nav-link" to="/login">Login</NavLink>
                         <NavLink activeClassName="active" className="nav-link" to="/dashboard">DashBoard</NavLink>
                         <NavLink activeClassName="active" className="nav-link" to="/aboutus">About Us</NavLink>
                         <NavLink activeClassName="active" className="nav-link" to="/customer">Customer</NavLink>
